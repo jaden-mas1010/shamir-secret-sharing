@@ -1,32 +1,56 @@
----
+# 🔐 Shamir’s Secret Sharing System (SSS)
 
-## 🔐 Cybersecurity Project — Secret Sharing (Shamir-Style)
-### 🧩 Overview
-This project demonstrates a **threshold-based secret sharing scheme** inspired by *Shamir’s Secret Sharing*. It securely splits a secret into multiple parts (shares) so that **any _t_ of _n_ shares** can reconstruct the original secret — but fewer than _t_ reveal nothing.  
-> 💡 **Goal:** Showcase secure key management principles for cryptographic research and education.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
+![Security](https://img.shields.io/badge/Focus-Cryptography%20%26%20Key%20Management-red.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)
 
----
+## 🧠 Overview
 
-### ⚙️ Features
-- 🔢 Split secrets into `n` shares with a chosen threshold `t`.  
-- 🧮 Reconstruct the secret using **Lagrange interpolation**.  
-- 🧰 Pure Python — no external libraries required.  
-- 🧑‍💻 Clear, commented, and safe for educational demonstration.  
-- 📁 Outputs example shares to a local folder (`shares/`).
+This project demonstrates an implementation of **Shamir’s Secret Sharing Scheme (SSS)** — a cryptographic algorithm designed to **split a secret (such as a password, key, or message)** into multiple parts (called *shares*).  
+A subset of these shares (meeting a defined **threshold**) can later be combined to reconstruct the original secret.  
+
+> 💡 This system enhances secure key management by ensuring that no single entity can access the secret independently.
 
 ---
 
-### 🧠 Conceptual Flow
-1. Represent the secret as a number.  
-2. Randomly generate a polynomial of degree `t-1` with the secret as its constant term.  
-3. Evaluate the polynomial at distinct `x` values to produce the shares.  
-4. Use Lagrange interpolation to reconstruct the polynomial’s constant term (the secret).  
+## ⚙️ Features
+
+✅ Self-contained Python implementation — no external dependencies  
+✅ Supports any custom secret (text or key)  
+✅ Adjustable threshold *(t)* and total shares *(n)*  
+✅ Uses modular arithmetic and polynomial interpolation  
+✅ Reconstructs secret from any valid subset of shares  
+✅ File-based share storage system  
 
 ---
 
-### 🧰 Repository Structure
-secret_sharing_project/
-├── keysplit.py # Main implementation
-├── README.md # Documentation and usage
-├── shares/ # Example generated shares (safe)
-└── report.pdf # Coursework write-up
+## 🧩 How It Works
+
+1. The **secret** is converted into an integer.
+2. A random polynomial of degree *(t–1)* is generated, where the constant term represents the secret.
+3. Multiple **shares** are computed using that polynomial at unique x-values.
+4. Any **t or more shares** can reconstruct the original secret using **Lagrange interpolation**.
+
+---
+
+## 🚀 Getting Started
+
+### 🧰 Requirements
+- Python **3.9+**
+- Works cross-platform (Windows, macOS, Linux)
+
+---
+
+### 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/jaden-mas1010/shamir-secret-sharing.git
+
+# Navigate to the folder
+cd shamir-secret-sharing
+
+# Run the program
+python keysplit.py
+
