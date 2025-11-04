@@ -25,3 +25,8 @@ This project demonstrates a **threshold-based secret sharing scheme** inspired b
 ---
 
 ### 🧰 Repository Structure
+secret_sharing_project/
+├── secret_sharing.py # Main implementation
+├── README.md # Documentation and usage
+├── shares/ # Example generated shares (safe)
+└── report.pdf # Coursework write-up
